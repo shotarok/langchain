@@ -49,58 +49,47 @@ class ClickupToolkit(BaseToolkit):
         """
         operations: List[Dict] = [
             {
-                "mode": "get_task",
-                "name": "Get task",
+                "name": "get_task",
                 "description": CLICKUP_GET_TASK_PROMPT,
             },
             {
-                "mode": "get_task_attribute",
-                "name": "Get task attribute",
+                "name": "get_task_attribute",
                 "description": CLICKUP_GET_TASK_ATTRIBUTE_PROMPT,
             },
             {
-                "mode": "get_teams",
-                "name": "Get Teams",
+                "name": "get_teams",
                 "description": CLICKUP_GET_ALL_TEAMS_PROMPT,
             },
             {
-                "mode": "create_task",
-                "name": "Create Task",
+                "name": "create_task",
                 "description": CLICKUP_TASK_CREATE_PROMPT,
             },
             {
-                "mode": "create_list",
-                "name": "Create List",
+                "name": "create_list",
                 "description": CLICKUP_LIST_CREATE_PROMPT,
             },
             {
-                "mode": "create_folder",
-                "name": "Create Folder",
+                "name": "create_folder",
                 "description": CLICKUP_FOLDER_CREATE_PROMPT,
             },
             {
-                "mode": "get_list",
-                "name": "Get all lists in the space",
+                "name": "get_list",
                 "description": CLICKUP_GET_LIST_PROMPT,
             },
             {
-                "mode": "get_folders",
-                "name": "Get all folders in the workspace",
+                "name": "get_folders",
                 "description": CLICKUP_GET_FOLDERS_PROMPT,
             },
             {
-                "mode": "get_spaces",
-                "name": "Get all spaces in the workspace",
+                "name": "get_spaces",
                 "description": CLICKUP_GET_SPACES_PROMPT,
             },
             {
-                "mode": "update_task",
-                "name": "Update task",
+                "name": "update_task",
                 "description": CLICKUP_UPDATE_TASK_PROMPT,
             },
             {
-                "mode": "update_task_assignees",
-                "name": "Update task assignees",
+                "name": "update_task_assignees",
                 "description": CLICKUP_UPDATE_TASK_ASSIGNEE_PROMPT,
             },
         ]
@@ -108,7 +97,7 @@ class ClickupToolkit(BaseToolkit):
             ClickupAction(
                 name=action["name"],
                 description=action["description"],
-                mode=action["mode"],
+                mode=action["name"],
                 api_wrapper=clickup_api_wrapper,
             )
             for action in operations
